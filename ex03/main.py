@@ -71,7 +71,8 @@ def detect_if_more_than_3_words_are_in_text(text: str, french_words: list[str]) 
 
 if __name__ == "__main__":
     french_words = load_french_words()
-    for i in range(len(INITIAL_TEXT)):
+
+    for i in range(len(ATBASH[0])):
         uncipher_text = custom_atbash_uncipher(INITIAL_TEXT, i)
         if detect_if_more_than_3_words_are_in_text(text=uncipher_text, french_words=french_words):
             print(f"La phrase déchiffrée est: {uncipher_text}")
