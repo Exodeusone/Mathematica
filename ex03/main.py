@@ -21,7 +21,7 @@ def load_french_words() -> list[str]:
     try:
         response = requests.get("https://raw.githubusercontent.com/eymenefealtun/all-words-in-all-languages/main/French/French.txt")
         response.raise_for_status()
-        return response.text.split(',')
+        return [word for word in response.text.split(',') if len(word) > 3]
     except Exception as e:
         print(e)
         exit(1)
@@ -65,11 +65,8 @@ def detect_if_more_than_3_words_are_in_text(text: str, french_words: list[str]) 
     Returns:
         bool: True if more than 3 words are in the text, False otherwise.
     '''
-    nb_detected_words = 0
-    for word in french_words:
-        if len(word) > 3 and word in text.lower():
-            nb_detected_words += 1
-    return nb_detected_words > 3
+    detected_words = [word for word in french_words if word in text.lower()]
+    return len(detected_words) > 3
 
 
 if __name__ == "__main__":
