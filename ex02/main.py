@@ -29,7 +29,6 @@ def find_kaprekar_numbers(start: int, end: int) -> list[int]:
             right_part = int(str_squared_number[split_point:] or '0')
 
             if left_part + right_part == number:
-                print(f"{number}^2 = {squared_number}, {left_part} + {right_part} = {number}")
                 kaprekar_numbers.append(number)
                 break
 
