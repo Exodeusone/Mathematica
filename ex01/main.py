@@ -31,4 +31,6 @@ if __name__ == "__main__":
     target_sum = int(args[0]) if len(args) > 0 and args[0].isdigit() else TARGET_SUM
     target_product = int(args[1]) if len(args) > 1 and args[1].isdigit() else TARGET_PRODUCT
     triplets = find_matching_sum_and_product(target_sum, target_product)
-    print(f"Les triplets sont les suivants: {', '.join(str(t) for t in triplets)}")
+    print(f"Il y a {len(triplets)} triplets qui correspondent à la somme {target_sum} et au produit {target_product}")
+    if len(triplets) > 0:
+        print(f"Les triplets sont les suivants: {', '.join(str(t) for t in triplets)}")

@@ -44,5 +44,6 @@ if __name__ == "__main__":
 
     kaprekar_numbers = find_kaprekar_numbers(min_number, max_number)
 
-    print(time.time() - base_time)
-    print(len(kaprekar_numbers))
+    print(f"Il y a {len(kaprekar_numbers)} nombres de Kaprekar entre {min_number} et {max_number}")
+    if len(kaprekar_numbers) > 0:
+        print(f"Les nombres de Kaprekar sont les suivants: {', '.join(str(number) for number in kaprekar_numbers)}")
