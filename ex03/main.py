@@ -36,7 +36,7 @@ def custom_atbash_uncipher(text: str, start_index: int) -> str:
         start_index (int): The index to start the unciphering from.
 
     Returns:
-        str: The unciphered text.
+        str: The unciphered with custom Atbash cipher text.
     '''
     uncipher_text = ""
     for _ in range(start_index):
@@ -53,29 +53,6 @@ def custom_atbash_uncipher(text: str, start_index: int) -> str:
         ATBASH[0] = ATBASH[0][1:] + [ATBASH[0][0]]
     uncipher_text = uncipher_text[::-1]
     return uncipher_text
-
-
-def custom_atbash_cipher(text: str) -> str:
-    '''
-    Encipher a text using the Atbash cipher.
-
-    Args:
-        text (str): The text to encipher.
-
-    Returns:
-        str: The enciphered text.
-    '''
-    ciper_text = ""
-    current_atbash_in_memory = ATBASH
-    for letter in text:
-        if letter in current_atbash_in_memory[0]:
-            index = current_atbash_in_memory[0].index(letter)
-            current_letter = current_atbash_in_memory[1][index]
-        else:
-            index = current_atbash_in_memory[1].index(letter)
-            current_letter = current_atbash_in_memory[0][index]
-        ciper_text += current_letter
-    return ciper_text
 
 
 def detect_if_more_than_3_words_are_in_text(text: str, french_words: list[str]) -> bool:
