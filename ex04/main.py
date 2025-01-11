@@ -34,10 +34,10 @@ VALUES_TO_COLOR = {
     }
 
 COLOR_TO_RENDER = {
-    "R": "#ff0000",  # Rouge en hexadécimal
-    "N": "#000000",  # Noir en hexadécimal
-    "B": "#0000ff",  # Bleu en hexadécimal
-    "S": "#ffffff"   # Blanc en hexadécimal
+    "R": "#ff0000",
+    "N": "#000000",
+    "B": "#0000ff",
+    "S": "#ffffff" 
 }
 
 
@@ -149,8 +149,3 @@ if __name__ == "__main__":
         if len(mosaic) == 257:
             break
     create_mosaic(mosaic)
-
-    # while True:
-    #     i += 1
-    #     if len(mosaic) == 257:
-    #         break
