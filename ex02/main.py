@@ -93,7 +93,7 @@ def find_kaprekar_numbers(ciphers: int) -> list[int]:
 if __name__ == "__main__":
     args = sys.argv[1:]
     if len(args) > 1 or len(args) == 1 and not args[0].isdigit():
-        print("Usage: python base.py <number of ciphers>")
+        print("Usage: python base.py <number of ciphers> (default: 8)")
         sys.exit(1)
     ciphers = int(args[0]) if len(args) == 1 and args[0].isdigit() else 8
     kaprekar_numbers = sorted(set(find_kaprekar_numbers(ciphers)))
